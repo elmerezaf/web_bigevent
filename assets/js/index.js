@@ -22,10 +22,10 @@ function getUserInfo() {
         url: '/my/userinfo',
         // 由于上面my开头的，并非api开头接头所以一般my的都是有权限的接口，就需要下面
         // 提交header请求头
-        headers: {
-            //获取localstorage的认证，如果没有token值就执行后面的空字符串
-            Authorization: localStorage.getItem('token') || ''
-        },
+        // headers: {
+        //     //获取localstorage的认证，如果没有token值就执行后面的空字符串
+        //     Authorization: localStorage.getItem('token') || ''
+        // },
         // 下面有两个回调函数，分别是success和complete
         success: function (res) {
             if (res.status !== 0) {

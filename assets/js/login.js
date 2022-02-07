@@ -25,7 +25,7 @@ $(function () {
     $('#form_reg').on('submit', function (e) {
         e.preventDefault()
         // 发起ajax的post请求
-        var data = { username: $('#saveUsername').val(), password: $('#dcpwd').val() }
+        var data = { username: $('#form_reg[name=username]').val(), password: $('#form_reg[name=password]').val() }
         $.post('/api/reguser', data,
             function (res) {
                 if (res.status !== 0) {
@@ -34,6 +34,7 @@ $(function () {
                 layer.msg('注册成功!')
                 $('#link_login').click()
             })
+
     })
 
     // 监听表单登录
